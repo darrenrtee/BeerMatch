@@ -1,0 +1,49 @@
+{
+    "project_type": "javascript",
+    "debugMode": 1,
+    "showFPS": true,
+    "frameRate": 60,
+    "noCache": false,
+    "id": "gameCanvas",
+    "renderMode": 0,
+    "engineDir": "frameworks/cocos2d-html5",
+    "modules": [
+        "cocos2d",
+        "extensions"
+    ],
+    "jsListOrder": [
+        "src/components/ResizeListener.js",
+        "src/**/*.js"
+    ],
+    "jsList": [
+        "src/components/ResizeListener.js",
+        "src/components/EnableOnLandscape.js",
+        "src/components/EnableOnPortrait.js",
+        "src/components/FitToParent.js",
+        "src/components/FitToWindow.js",
+        "src/components/GameLayerResizer.js",
+        "src/components/ToMainScene.js",
+        "src/components/MouseControl.js",
+        "src/components/PaddleControl.js",
+        "src/layers/GridLayer.js",
+        "src/layers/TitleLayer.js",
+        "src/layers/ResultLayer.js",
+        "src/layouts/PauseLayoutLandscape.js",
+        "src/layouts/PauseLayoutPortrait.js",
+        "src/layouts/AbsoluteLayout.js",
+        "src/layouts/HorizontalLayout.js",
+        "src/layouts/LandscapeLayout.js",
+        "src/layouts/PercentPositioningLayout.js",
+        "src/layouts/PercentSizingLayout.js",
+        "src/layouts/PortraitLayout.js",
+        "src/layouts/RelativeLayout.js",
+        "src/layouts/VerticalLayout.js",
+        "src/objects/tile.js",
+        "src/resource.js",
+        "src/scenes/GameScene.js",
+        "src/scenes/TitleScene.js",
+        "src/scenes/ResultScene.js",
+        "src/sprites/Paddle.js",
+        "src/sprites/Ball.js"
+    ]
+}
