@@ -7,9 +7,11 @@ class ResultLayer extends cc.Layer{
         }
 
         let size = cc.winSize;
-        let toMainScene = new ToMainScene();
-        let titleLabel = new cc.LabelTTF("GAME OVER !", 'Pixel', 120);
-        let scoreLabel = new cc.LabelTTF("FINAL SCORE : " + score, 'Pixel', 120);
+        let toMainScene = new ToMainScene()
+        let titleLabel = new ccui.Text("Game OVER", 'Pixel', 64);
+        titleLabel.addComponent(new FitToParent())
+        let scoreLabel = new ccui.Text("FINAL SCORE: " + score, 'Pixel', 64);
+        scoreLabel.addComponent(new FitToParent())
 
         titleLabel.setPosition(cc.p(size.width /2, (size.height /6) * 5));
         scoreLabel.setPosition(cc.p(size.width /2, (size.height /6) * 4));

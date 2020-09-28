@@ -9,7 +9,8 @@ class TitleLayer extends cc.Layer{
         
         let size = cc.winSize;
         let toMainScene = new ToMainScene();
-        let titleLabel = new cc.LabelTTF("BEER MATCH", 'Pixel', 120);
+        let titleLabel = new ccui.Text("BEER MATCH", 'Pixel', 64);
+        titleLabel.addComponent(new FitToParent())
         var sprite = new cc.Sprite.create(res.Background_png);
         var menuItem1 = new cc.MenuItemImage.create(res.StartButton_png,res.StartButton_png, start);
         var menu = new cc.Menu(menuItem1);

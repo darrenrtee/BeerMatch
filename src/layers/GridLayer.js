@@ -12,7 +12,7 @@ class GridLayer extends cc.Layer{
         this.gameWidth = this.getContentSize().width;
         this.gameHeight = this.getContentSize().height;
         this.fieldSize = 8;
-        this.tileSize = 100;
+        this.tileSize = 60;
         this.time = 120;
         this.size = cc.winSize;
         this.xPosition = this.size.width/2 - this.tileSize*this.fieldSize/2;
@@ -22,15 +22,15 @@ class GridLayer extends cc.Layer{
         this.toMainScene = new ToMainScene();
 
         //Inner Layer
-        this.gridContainer = cc.Layer.create();
+        this.gridContainer = new ccui.Layout()
         this.gridContainer.setPosition(this.xPosition,this.yPosition);
         this.addChild(this.gridContainer);
-
+        
         //Components
         this.addComponent(new GameLayerResizer());
         this.addChild(this.portrait);
         this.addChild(this.landscape);
-
+    
         //Methods
         this.initializeGrid();
         cc.eventManager.addListener({
@@ -71,11 +71,11 @@ class GridLayer extends cc.Layer{
         
         var randomTile = Math.floor(Math.random()*6);
         var sprite = cc.Sprite.create("res/"+tileTypes[randomTile]);
-       
+      
         this.gridContainer.addChild(sprite,1);
         sprite.type = randomTile;
         sprite.setPosition(row*this.tileSize+this.tileSize/2,col*this.tileSize+this.tileSize/2);
-        
+        sprite.setScale(0.5)
         tileArray[row][col] =  sprite;
     }
 
@@ -183,9 +183,9 @@ class GridLayer extends cc.Layer{
                         if(tileArray[j][i] != null){
                             var type = tileArray[j][i].type;
                             var sprite = cc.Sprite.create("res/"+tileTypes[type]);
-                        
+                            sprite.setScale(0.5)
                             this.gridContainer.removeChild(tileArray[j][i]);
-                        
+                            
                             this.gridContainer.addChild(sprite,1);
                             sprite.type = type;
                             sprite.setPosition(j*this.tileSize+this.tileSize/2,(i-1)*this.tileSize+this.tileSize/2);
@@ -203,7 +203,7 @@ class GridLayer extends cc.Layer{
             if(tileArray[j][this.fieldSize-1] == null){
                 var randomTile = Math.floor(Math.random()*6);
                 var sprite = cc.Sprite.create("res/"+tileTypes[randomTile]);
-            
+                sprite.setScale(0.5)
                 this.gridContainer.addChild(sprite,1);
                 sprite.type = randomTile;
                 sprite.setPosition(j*this.tileSize+this.tileSize/2,(this.fieldSize-1)*this.tileSize+this.tileSize/2);
